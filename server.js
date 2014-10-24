@@ -18,4 +18,4 @@ app.use('/api', require('./routes/api'));
 
 // Inicia o servidor na porta 5000
 app.listen(5000);
-console.log('API Rodando na porta 3000!!!');
+console.log('API Rodando na porta 5000!');
