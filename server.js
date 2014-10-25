@@ -4,7 +4,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-
+var app = express();
 // MongoDB
 mongoose.connect('mongodb://localhost/phone_book', function(err) {
     if (err) {
@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/phone_book', function(err) {
 });
 
 // Express
-var app = express();
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
