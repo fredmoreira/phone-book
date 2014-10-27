@@ -26,4 +26,5 @@ DELETE 	/api/contacts/_id	Deleta contato especificado pelo _id (Id no MongoDB)
 
 ###Use para testar manualmente
 
-Postman - Chrome 
+Postman - Chrome [https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm]
+Fiddler [http://www.telerik.com/fiddler]
