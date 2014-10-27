@@ -1,14 +1,18 @@
 
 // Dependencies
-var restful = require('node-restful');
-var mongoose = restful.mongoose;
+var mongoose = require('mongoose');
 
 // Schema
-var contactSchema = new mongoose.Schema({
-    name: String,
-    mobilephone: String,
-    homephone: String
-});
+var ContactModel = function() {
+	var contactSchema = mongoose.Schema({
+		name: String,
+		mobilephone: String,
+		homephone: String
+	}, {
+		collection: 'contacts'
+	});
 
+	return mongoose.model('contacts', contactSchema);
+};
 // Retorna model
-module.exports = restful.model('Contacts', contactSchema);
+module.exports = new ContactModel();
