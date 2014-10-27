@@ -16,16 +16,16 @@ API REST simples para experimentar frameworks de automação de testes de api's
 * node server.js (No diretório raiz do projeto)
 
 ### Métodos disponíveis para esta versão
-Método        URL 				 Ação
-GET 	/api/contacts 		Consulta todos os contatos
-GET 	/api/contacts/_id   Consulta contato especificado pelo _id (Id no MongoDB)
-GET		/api/names/name     Consulta contato filtrando pelo nome
-POST 	/api/contacts 		Adiciona novo contato
-PUT 	/api/contacts/_id	Atualiza contato especificado pelo _id (Id no MongoDB)
-DELETE 	/api/contacts/_id	Deleta contato especificado pelo _id (Id no MongoDB)
+* Método        URL 				 Ação
+* GET 	/api/contacts 		Consulta todos os contatos
+* GET 	/api/contacts/_id   Consulta contato especificado pelo _id (Id no MongoDB)
+* GET		/api/names/name     Consulta contato filtrando pelo nome
+* POST 	/api/contacts 		Adiciona novo contato
+* PUT 	/api/contacts/_id	Atualiza contato especificado pelo _id (Id no MongoDB)
+* DELETE 	/api/contacts/_id	Deleta contato especificado pelo _id (Id no MongoDB)
 
 ###Use para testar manualmente
 
-* Postman - Chrome [https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm]
+* Postman - Chrome (https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm)
 
-* Fiddler [http://www.telerik.com/fiddler]
+* Fiddler (http://www.telerik.com/fiddler)
