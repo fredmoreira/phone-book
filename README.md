@@ -1,10 +1,25 @@
-PhoneBook
-=========
+##PhoneBook (Versão 0.0.1)
 
 API REST simples para experimentar frameworks de automação de testes de api's
 
-Depedências
----------
+####Depedências
 
-MongoDB
+* MongoDB
+* Node / NPM
 
+###Instalação
+* git clone https://github.com/fredmoreira/PhoneBook.git
+* npm install
+
+###Executar
+
+* node server.js (No diretório raiz do projeto)
+
+### Métodos disponíveis para esta versão
+Método  	       URL 								 Ação
+GET 		/api/contacts 					Consulta todos os contatos
+GET 		/api/contacts/_id          		Consulta contato especificado pelo _id (Id no MongoDB)
+GET			/api/names/name                 Consulta contato filtrando pelo nome
+POST 		/api/contacts 			    	Adiciona novo contato
+PUT 		/api/contacts/_id		 	    Atualiza contato especificado pelo _id (Id no MongoDB)
+DELETE 		/api/contacts/_id		 		Deleta contato especificado pelo _id (Id no MongoDB)
