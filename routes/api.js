@@ -41,10 +41,19 @@ module.exports = function(app) {
         });
     });
 
-    app.delete('/api/contacts/:id', function(req, res){
+    app.delete('/api/contacts/:id', function(req, res) {
         var _id = req.params.id;
-        if(!_id){
-            res.status(400)
-        }
+        if (!_id)
+            res.status(400);
+
+        else
+            Contact.findOneAndRemove(_id, function(err) {
+                if (err)
+                    res.status(400);
+
+                else
+                    res.send('Contact deleted');
+
+            });
     });
 };

@@ -7,15 +7,15 @@ API REST simples para experimentar frameworks de automação de testes de api's
 * MongoDB
 * Node / NPM
 
-###Instalação
+#### Instalação
 * git clone https://github.com/fredmoreira/PhoneBook.git
 * npm install
 
-###Executar
+#### Executar
 
 * node server.js (No diretório raiz do projeto)
 
-### Métodos disponíveis para esta versão
+#### Métodos disponíveis para esta versão
 
 * GET 	/api/contacts 		 --> Consulta todos os contatos
 * GET 	/api/contacts/_id    --> Consulta contato especificado pelo _id (Id no MongoDB)
@@ -26,7 +26,7 @@ API REST simples para experimentar frameworks de automação de testes de api's
 PUT 	/api/contacts/_id	 --> Atualiza contato especificado pelo _id (Id no MongoDB)
 DELETE 	/api/contacts/_id	--> Deleta contato especificado pelo _id (Id no MongoDB)
 
-###Use para testar manualmente
+#### Use para testar manualmente
 
 * Postman - Chrome (https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm)
 
