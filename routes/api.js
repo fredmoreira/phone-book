@@ -17,7 +17,6 @@ module.exports = function(app) {
         });
     });
 
-    //app.get('/contacts/:id', contacts.byId);
     app.post('/api/contacts', function(req, res) {
         var name = req.body.name,
             mobilephone = req.body.mobilephone,
@@ -40,5 +39,12 @@ module.exports = function(app) {
                 res.status(201).end();
             }
         });
+    });
+
+    app.delete('/api/contacts/:id', function(req, res){
+        var _id = req.params.id;
+        if(!_id){
+            res.status(400)
+        }
     });
 };
