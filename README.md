@@ -1,4 +1,4 @@
-##PhoneBook (Versão 0.0.2)
+##PhoneBook (Versão 0.0.3)
 
 API REST simples para experimentar frameworks de automação de testes de api's
 
@@ -22,11 +22,11 @@ API REST simples para experimentar frameworks de automação de testes de api's
 * GET	  /api/contacts?parametro=    Consulta contato filtrando pelo parametro(name,mobilephone,homephone)
 * POST 	  /api/contacts 		 --> Adiciona novo contato
 * DELETE  /api/contacts/:id	  --> Deleta contato especificado pelo _id (Id no MongoDB)
+* PUT 	  /api/contacts/_id	 --> Atualiza contato especificado pelo _id (Id no MongoDB)
 
-Obs.: Para o método post os campos "name" e "mobilephone" são obrigatórios.
-
-#### Em implantação
-PUT 	/api/contacts/_id	 --> Atualiza contato especificado pelo _id (Id no MongoDB)
+##### Observações
+* O método de PUT foi implantado para atualizar apenas o 'name' por enquanto.
+* Para o método post os campos "name" e "mobilephone" são obrigatórios.
 
 #### Use para testar manualmente
 

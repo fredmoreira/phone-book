@@ -39,9 +39,8 @@ module.exports = function(app) {
                     res.status(201).end();
                 }
             });
-        };
+        }
     });
-
 
     app.delete('/api/contacts/:id', function(req, res) {
         var id = {
@@ -65,12 +64,11 @@ module.exports = function(app) {
             name: req.body.name
         }, function(err, data) {
             if (err) {
-                console.log(err);
+                console.log(name);
                 res.status(400).end();
             } else {
-                var result = JSON.stringify(res.body)
-                res.status(200).send(result).end();
+                res.status(204).end();
             }
         });
     });
-}
+};
