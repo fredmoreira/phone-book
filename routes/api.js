@@ -18,42 +18,41 @@ module.exports = function(app) {
     });
 
     app.post('/api/contacts', function(req, res) {
-        var name = req.body.name,
-            mobilephone = req.body.mobilephone,
-            homephone = req.body.homephone;
+            var name = req.body.name,
+                mobilephone = req.body.mobilephone,
+                homephone = req.body.homephone;
 
-        if (!name || !mobilephone) {
-            res.status(400).send('Parâmetro(s) invalido(s)').end();
-        }
-        var obj = new Contact({
-            name: name,
-            mobilephone: mobilephone,
-            homephone: homephone
-        });
-
-        obj.save(function(err, data) {
-            if (err) {
-                res.send(500);
+            if (!name || !mobilephone) {
+                res.status(400).send('Parâmetro(s) invalido(s)').end();
             } else {
-                res.json(data);
-                res.status(201).end();
-            }
-        });
-    });
+                var obj = new Contact({
+                    name: name,
+                    mobilephone: mobilephone,
+                    homephone: homephone
+                });
+
+                obj.save(function(err, data) {
+                    if (err) {
+                        res.send(500);
+                    } else {
+                        res.json(data);
+                        res.status(201).end();
+                    }
+                });
+            };
+    });        
+    
 
     app.delete('/api/contacts/:id', function(req, res) {
-        var _id = req.params.id;
-        if (!_id)
-            res.status(400);
+        var id ={_id : req.params.id};
 
-        else
-            Contact.findOneAndRemove(_id, function(err) {
-                if (err)
-                    res.status(400);
-
-                else
-                    res.send('Contact deleted');
+            Contact.remove(id, function(err , data) {
+                if (err){
+                    console.log(err);
+                    res.status(400).end();
+                }else
+                    res.status(204).end();
 
             });
     });
-};
+}
