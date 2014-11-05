@@ -1,4 +1,4 @@
-##PhoneBook (Versão 0.0.3)
+##PhoneBook (Versão 0.0.4)
 
 API REST simples para experimentar frameworks de automação de testes de api's
 
