@@ -1,6 +1,6 @@
 {
   "name": "PhoneBook",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "API REST para testes",
   "main": "index.js",
   "scripts": {

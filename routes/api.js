@@ -3,7 +3,11 @@ var Contact = require('../models/contact');
 
 // Rotas
 module.exports = function(app) {
-    app.get('/api/contacts', function(req, res) {
+    app.get('/', function(req, res) {
+        res.send('API PHONE-BOOK FUNCIONANDO!');
+    });
+
+    app.get('/contacts', function(req, res) {
         var params = (req.query ? req.query : {});
         Contact.find(params, function(err, contact) {
             if (err) {
@@ -17,7 +21,7 @@ module.exports = function(app) {
         });
     });
 
-    app.post('/api/contacts', function(req, res) {
+    app.post('/contacts', function(req, res) {
         var name = req.body.name,
             mobilephone = req.body.mobilephone,
             homephone = req.body.homephone;
@@ -42,7 +46,7 @@ module.exports = function(app) {
         }
     });
 
-    app.delete('/api/contacts/:id', function(req, res) {
+    app.delete('/contacts/:id', function(req, res) {
         var id = {
             _id: req.params.id
         };
@@ -56,7 +60,7 @@ module.exports = function(app) {
         });
     });
 
-    app.put('/api/contacts/:id', function(req, res) {
+    app.put('/contacts/:id', function(req, res) {
         var id = {
             _id: req.params.id
         };

@@ -15,14 +15,18 @@ API REST simples para experimentar frameworks de automação de testes de api's
 
 * node server.js (No diretório raiz do projeto)
 
+#### HEADER
+
+Utilizar o seguinte Content-Type: **Content-Type: application/json**
+
 #### Métodos disponíveis para esta versão
 
-* GET 	  /api/contacts 		 --> Consulta todos os contatos
-* GET 	  /api/contacts/:id    --> Consulta contato especificado pelo _id (Id no MongoDB)
-* GET	  /api/contacts?parametro=    Consulta contato filtrando pelo parametro(name,mobilephone,homephone)
-* POST 	  /api/contacts 		 --> Adiciona novo contato
-* DELETE  /api/contacts/:id	  --> Deleta contato especificado pelo _id (Id no MongoDB)
-* PUT 	  /api/contacts/_id	 --> Atualiza contato especificado pelo _id (Id no MongoDB)
+* GET 	  /contacts 		 --> Consulta todos os contatos
+* GET 	  /contacts/:id    --> Consulta contato especificado pelo _id (Id no MongoDB)
+* GET	  /contacts?parametro=    Consulta contato filtrando pelo parametro(name,mobilephone,homephone)
+* POST 	  /contacts 		 --> Adiciona novo contato
+* DELETE  /contacts/:id	  --> Deleta contato especificado pelo _id (Id no MongoDB)
+* PUT 	  /contacts/_id	 --> Atualiza contato especificado pelo _id (Id no MongoDB)
 
 ##### Observações
 * O método de PUT foi implantado para atualizar apenas o 'name' por enquanto.
