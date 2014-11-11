@@ -39,8 +39,7 @@ module.exports = function(app) {
                 if (err) {
                     res.send(500);
                 } else {
-                    res.json(data);
-                    res.status(201).end();
+                    res.status(201).send(data);
                 }
             });
         }
