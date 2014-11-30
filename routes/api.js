@@ -26,8 +26,11 @@ module.exports = function(app) {
             mobilephone = req.body.mobilephone,
             homephone = req.body.homephone;
 
-        if (!name || !mobilephone) {
-            res.status(400).send('Parâmetro(s) invalido(s)').end();
+        if (!name) {
+            return res.status(400).send('Name is required').end();
+        }
+        if (!mobilephone) {
+            return res.status(400).send('Mobilephone is required').end();
         } else {
             var obj = new Contact({
                 name: name,
