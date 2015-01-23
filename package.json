@@ -4,7 +4,7 @@
   "description": "API REST para testes",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha -R spec --recursive"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,6 @@
     "body-parser": "^1.9.1",
     "express": "^4.9.8",
     "mongoose": "^3.8.18",
-    "node-restful": "^0.1.17"
+    "supertest": "^0.15.0"
   }
 }
