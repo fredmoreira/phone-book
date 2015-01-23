@@ -16,9 +16,9 @@ describe('Teste de get da API: ', function() {
 		db.disconnect(done);
 	});
 
-	// beforeEach(function(done) {
-	// 	db.drop('contacts', done);
-	// });
+	beforeEach(function(done) {
+		db.drop('contacts', done);
+	});
 
 	it('Deve retornar um contact completo', function(done) {
 		var obj = new contact({
@@ -38,7 +38,9 @@ describe('Teste de get da API: ', function() {
 			.expect(200, done)
 			.expect(function(res) {
 				var result = res.body;
-				assert.equal(2, 2, 'Retorno diferente do esperado');
+				assert.equal('teste', result[0].name, 'Retorno diferente do esperado');
+				assert.equal('0553188887777', result[0].mobilephone, 'Retorno diferente do esperado');
+				assert.equal('0558833332222', result[0].homephone, 'Retorno diferente do esperado');
 			});
 	});
 });
