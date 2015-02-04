@@ -6,7 +6,7 @@ var db = require('../db/db');
 var app = require('../server');
 var request = require('supertest');
 
-describe('Teste de GET da API: ', function() {
+describe('Testes API PhoneBook - GET ', function() {
 	before(function(done) {
 		db.init();
 		done();
