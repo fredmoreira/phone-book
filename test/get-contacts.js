@@ -6,7 +6,7 @@ var db = require('../db/db');
 var app = require('../server');
 var request = require('supertest');
 
-describe('Teste de get da API: ', function() {
+describe('Teste de GET da API: ', function() {
 	before(function(done) {
 		db.init();
 		done();
@@ -20,7 +20,7 @@ describe('Teste de get da API: ', function() {
 		db.drop('contacts', done);
 	});
 
-	it('Deve retornar um contact completo', function(done) {
+	it('GET - Deve retornar um contact completo', function(done) {
 		var obj = new contact({
 			name: 'teste',
 			mobilephone: '0553188887777',
@@ -38,9 +38,18 @@ describe('Teste de get da API: ', function() {
 			.expect(200, done)
 			.expect(function(res) {
 				var result = res.body;
-				assert.equal('teste', result[0].name, 'Retorno diferente do esperado');
-				assert.equal('0553188887777', result[0].mobilephone, 'Retorno diferente do esperado');
-				assert.equal('0558833332222', result[0].homephone, 'Retorno diferente do esperado');
+				assert.equal('teste', result[0].name, 'Retorno do name diferente do esperado');
+				assert.equal('0553188887777', result[0].mobilephone, 'Retorno do mobilephone diferente do esperado');
+				assert.equal('0558833332222', result[0].homephone, 'Retorno do homephone diferente do esperado');
+			});
+	});
+
+	it('GET - Contact não existente', function(done) {
+		request(app)
+			.get('/contacts/?name=Testador das galaxias 123')
+			.end(function(err, res) {
+				assert.equal(res.status, 204);
+				done();
 			});
 	});
 });
