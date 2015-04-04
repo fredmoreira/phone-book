@@ -23,7 +23,7 @@ var contatoSemMobilePhone = {
 };
 
 
-describe.only('Testes API PhoneBook - POST', function() {
+describe('Testes API PhoneBook - POST', function() {
   before(function(done) {
     db.init();
     done();
