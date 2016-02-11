@@ -1,4 +1,4 @@
-##PhoneBook (Versão 0.0.4)
+#PhoneBook [![Circle CI](https://circleci.com/gh/fredmoreira/PhoneBook.svg?style=shield)](https://circleci.com/gh/fredmoreira/PhoneBook)
 
 API REST simples para experimentar frameworks de automação de testes de api's
 
