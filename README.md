@@ -5,13 +5,13 @@ API REST simples para experimentar frameworks de automação de testes de api's
 ####Depedências
 
 * MongoDB
-* Node / NPM
+* Node / Npm
 
-#### Instalação
+#### Setup
 * git clone https://github.com/fredmoreira/PhoneBook.git
 * npm install
 
-#### Executar
+#### Run server
 
 * node server.js (No diretório raiz do projeto)
 
