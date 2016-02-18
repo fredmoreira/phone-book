@@ -1,8 +1,8 @@
-var assert = require('chai').assert,
-  request = require('supertest'),
-  expect = require('chai').expect,
-  db = require('../db/db'),
-  app = require('../server');
+var assert = require('chai').assert;
+var request = require('supertest');
+var expect = require('chai').expect;
+var db = require('../db/db');
+var app = require('../lib/index');
 
 var url = 'http://localhost:5000';
 

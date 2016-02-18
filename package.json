@@ -1,19 +1,22 @@
 {
-  "name": "PhoneBook",
-  "version": "0.0.4",
-  "description": "API REST para testes",
-  "main": "server.js",
+  "name": "phone-book",
+  "version": "1.0.0",
+  "description": "Simple API REST using Nodejs, Express and MongoDB for presentations about integration tests",
+  "main": "./lib/index.js",
   "scripts": {
+    "start": "node lib/index.js",
     "test": "mocha -R spec --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fredmoreira/PhoneBook.git"
+    "url": "https://github.com/fredmoreira/phone-book.git"
   },
   "keywords": [
     "PhoneBook",
     "Test",
-    "TesteFramework"
+    "Test Framework",
+    "API",
+    "REST"
   ],
   "author": "Frederico Moreira",
   "license": "ISC",
@@ -22,9 +25,13 @@
   },
   "homepage": "https://github.com/fredmoreira/PhoneBook",
   "dependencies": {
-    "body-parser": "^1.9.1",
-    "express": "^4.9.8",
-    "mongoose": "~4.4.0"
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongoose": "~4.4.0",
+    "mongojs": "~2.3.x",
+    "tv4": "^1.2.7",
+    "winston": "~1.0.x",
+    "morgan": "~1.6.x"
   },
   "devDependencies": {
     "mocha": "2.X.0",

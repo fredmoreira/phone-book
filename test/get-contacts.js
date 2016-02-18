@@ -3,7 +3,7 @@
 var contact = require('../models/contact');
 var assert = require('chai').assert;
 var db = require('../db/db');
-var app = require('../server');
+var app = require('../lib/index');
 var request = require('supertest');
 
 describe('Testes API PhoneBook - GET ', function() {
