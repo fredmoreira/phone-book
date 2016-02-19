@@ -1,3 +1,5 @@
+'use strict';
+
 var assert = require('chai').assert;
 var request = require('supertest');
 var expect = require('chai').expect;
@@ -7,19 +9,19 @@ var app = require('../lib/index');
 var url = 'http://localhost:5000';
 
 var contatoCompleto = {
-  "name": "Tester Mineiro",
-  "mobilephone": "0553188889999",
-  "homephone": "0553133332222"
+  'name': 'Tester Mineiro',
+  'mobilephone': '0553188889999',
+  'homephone': '0553133332222'
 };
 
 var contatoSemNome = {
-  "mobilephone": "0553188889999",
-  "homephone": "0553133332222"
+  'mobilephone': '0553188889999',
+  'homephone': '0553133332222'
 };
 
 var contatoSemMobilePhone = {
-  "name": "Tester Mineiro",
-  "homephone": "0553133332222"
+  'name': 'Tester Mineiro',
+  'homephone': '0553133332222'
 };
 
 

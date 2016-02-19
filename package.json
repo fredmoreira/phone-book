@@ -27,6 +27,7 @@
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
+    "bluebird": "^3.0.5",
     "mongoose": "~4.4.0",
     "mongojs": "~2.3.x",
     "tv4": "^1.2.7",
@@ -35,7 +36,7 @@
   },
   "devDependencies": {
     "mocha": "2.X.0",
-    "nodemon": "^1.3.6",
+    "nodemon": "^1.8.1",
     "supertest": "1.1.X",
     "chai": "*"
   }

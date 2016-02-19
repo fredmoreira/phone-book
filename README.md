@@ -2,7 +2,7 @@
 
 API REST simples para experimentar frameworks de automação de testes de api's
 
-####Depedências
+####Depedencies
 
 * MongoDB
 * Node / Npm
@@ -13,16 +13,14 @@ API REST simples para experimentar frameworks de automação de testes de api's
 
 #### Run server
 
-* node server.js (No diretório raiz do projeto)
+* npm start
 
 #### HEADER
 
-Utilizar o seguinte Content-Type: **Content-Type: application/json**
+You must use Content-Type: **Content-Type: application/json**
 
 #### Métodos disponíveis para esta versão
 
-* GET 	  /contacts 		 --> Consulta todos os contatos
-* GET 	  /contacts/:id    --> Consulta contato especificado pelo _id (Id no MongoDB)
 * GET	  /contacts?parametro=    Consulta contato filtrando pelo parametro(name,mobilephone,homephone)
 * POST 	  /contacts 		 --> Adiciona novo contato
 * DELETE  /contacts/:id	  --> Deleta contato especificado pelo _id (Id no MongoDB)
