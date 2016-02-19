@@ -1,4 +1,4 @@
-#PhoneBook [![Circle CI](https://circleci.com/gh/fredmoreira/PhoneBook.svg?style=shield)](https://circleci.com/gh/fredmoreira/PhoneBook)
+#PhoneBook
 
 A simple API REST to run tests on testing frameworks
 
