@@ -1,6 +1,6 @@
-#PhoneBook [![Circle CI](https://circleci.com/gh/fredmoreira/phone-book.svg?style=shield)](https://circleci.com/gh/fredmoreira/PhoneBook)
+#PhoneBook [![Circle CI](https://circleci.com/gh/fredmoreira/PhoneBook.svg?style=shield)](https://circleci.com/gh/fredmoreira/PhoneBook)
 
-API REST simples para experimentar frameworks de automação de testes de api's
+A simple API REST to run tests on testing frameworks
 
 ####Depedencies
 
@@ -17,20 +17,19 @@ API REST simples para experimentar frameworks de automação de testes de api's
 
 #### HEADER
 
-You must use Content-Type: **Content-Type: application/json**
+You must use **Content-Type: application/json**
 
-#### Métodos disponíveis para esta versão
+#### Methods available for this version
 
-* GET	  /contacts?parametro=    Consulta contato filtrando pelo parametro(name,mobilephone,homephone)
-* POST 	  /contacts 		 --> Adiciona novo contato
-* DELETE  /contacts/:id	  --> Deleta contato especificado pelo _id (Id no MongoDB)
-* PUT 	  /contacts/_id	 --> Atualiza contato especificado pelo _id (Id no MongoDB)
+* GET	  /contacts?parameter=    You can use *name* or *mobilephone* and *homephone*
+* POST 	  /contacts 		 
+* DELETE  /contacts/:id
+* PUT 	  /contacts/_id
 
-##### Observações
-* O método de PUT foi implantado para atualizar apenas o 'name' por enquanto.
-* Para o método post os campos "name" e "mobilephone" são obrigatórios.
+##### Comments
+* Parameters "name" and "mobilephone" are required in *POST* method.
 
-#### Use para testar manualmente
+#### Use manually test
 
 * Postman - Chrome (https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm)
 
