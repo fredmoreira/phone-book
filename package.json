@@ -28,7 +28,6 @@
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "bluebird": "^3.0.5",
-    "mongoose": "~4.4.0",
     "mongojs": "~2.3.x",
     "tv4": "^1.2.7",
     "winston": "~1.0.x",

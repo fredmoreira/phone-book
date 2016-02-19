@@ -1,8 +1,9 @@
 'use strict';
 
-var Contact = require('../models/contact');
 var db = require('../db');
 var Promisse = require('bluebird');
+var mongojs = require('mongojs');
+var ObjectId = mongojs.ObjectId;
 
 module.exports = function(app) {
   app.get('/', function(req, res) {
@@ -19,11 +20,10 @@ module.exports = function(app) {
     db.then(function(conn) {
       conn.contacts.find(params, function(err, contact) {
         if (err) {
-          res.status(500);
-          res.send(err);
+          return res.status(500).send(err);
         }
         if (!contact.length) {
-          res.sendStatus(404);
+          return res.sendStatus(404);
         }
         res.send(contact);
       });
@@ -61,9 +61,8 @@ module.exports = function(app) {
 
   app.delete('/contacts/:id', function(req, res) {
     var id = {
-      _id: 'ObjectId'+'("'+req.params.id+'")'
+      _id: ObjectId(req.params.id)
     };
-    console.log(id);
     db.then(function(conn) {
       conn.contacts.remove(id, function(err, data) {
         if (err) {
@@ -78,17 +77,23 @@ module.exports = function(app) {
 
   app.put('/contacts/:id', function(req, res) {
     var id = {
-      _id: req.params.id
+      _id: ObjectId(req.params.id)
     };
-    Contact.update(id, {
-      name: req.body.name
-    }, function(err, data) {
-      if (err) {
-        console.log(err);
-        res.status(400).end();
-      } else {
-        res.status(204).end();
+    var update = {
+      $set: {
+        name: req.body.name
       }
+    };
+
+    db.then(function(conn) {
+      conn.contacts.update(id, update, function(err, data) {
+        if (err) {
+          console.log(err);
+          res.status(400).end();
+        } else {
+          res.status(204).end();
+        }
+      });
     });
   });
 };
