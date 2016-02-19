@@ -1,0 +1,17 @@
+{
+  "id": "Contact",
+  "required": ["name", "mobilephone"],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "mobilephone": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 13
+    },
+    "homephone": {
+      "type": "string"
+    }
+  }
+}
