@@ -1,7 +1,7 @@
 'use strict';
 
 var assert = require('chai').assert;
-var db = require('../db');
+var db = require('../lib/db');
 var app = require('../lib/index');
 var request = require('supertest');
 var _conn;
@@ -30,11 +30,13 @@ describe('Tests API Phone Book - GET ', function() {
     _conn.contacts.insert(fullContact, function(err, res) {
       request(app)
         .get('/contacts?name=TesterCarioca')
-        .expect(200, done)
-        .expect(function(res) {
+        .expect(200)
+        .end(function(err, res) {
+          assert.isNull(err);
           assert.equal('TesterCarioca', res.body[0].name, 'Return different name than expected');
           assert.equal('0552188889999', res.body[0].mobilephone, 'Return different mobilephone than expected');
           assert.equal('0552133332222', res.body[0].homephone, 'Return different homephone than expected');
+          done();
         });
     });
   });

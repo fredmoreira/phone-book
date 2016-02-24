@@ -3,7 +3,7 @@
 var assert = require('chai').assert;
 var request = require('supertest');
 var expect = require('chai').expect;
-var db = require('../db');
+var db = require('../lib/db');
 var app = require('../lib/index');
 var _conn;
 
