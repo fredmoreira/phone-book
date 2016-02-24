@@ -1,6 +1,6 @@
-#PhoneBook
+#PhoneBook [![Circle CI](https://circleci.com/gh/fredmoreira/phone-book.svg?style=shield)](https://circleci.com/gh/fredmoreira/phone-book)
 
-A simple API REST to run tests on testing frameworks
+A simple API REST for experiencing testing frameworks
 
 ####Depedencies
 
