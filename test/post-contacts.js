@@ -37,21 +37,21 @@ describe('Tests API Phone Book - POST', function() {
     });
   });
 
-  it('POST - Deve tentar criar um contact completo', function(done) {
+  it('POST - Should create a full contact', function(done) {
     request(app)
       .post('/contacts/')
       .set('Content-type', 'application/json')
       .send(fullContact)
       .end(function(err, res) {
         assert.equal(res.status, 201);
-        assert.equal(res.body.name, 'Tester Mineiro', 'Conferindo o name!');
+        assert.equal(res.body.name, 'Tester Mineiro', 'Check o name!');
         assert.equal(res.body.mobilephone, '0553188889999', 'Check mobilephone!');
         assert.equal(res.body.homephone, '0553133332222', 'Check homephone!');
         done();
       });
   });
 
-  it('POST - Deve tentar criar um contact sem nome', function(done) {
+  it('POST - Should try to create a unnamed contact.', function(done) {
     request(app)
       .post('/contacts/')
       .set('Content-type', 'application/json')
@@ -63,7 +63,7 @@ describe('Tests API Phone Book - POST', function() {
       });
   });
 
-  it('POST - Deve tentar criar um contact sem mobilephone', function(done) {
+  it('POST - Should try to create a contact without mobilephone.', function(done) {
     request(app)
       .post('/contacts/')
       .set('Content-type', 'application/json')

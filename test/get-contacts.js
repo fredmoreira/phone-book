@@ -26,15 +26,15 @@ describe('Tests API Phone Book - GET ', function() {
     });
   });
 
-  it('GET - Deve retornar um contact completo', function(done) {
+  it('GET - Should return a full contact.', function(done) {
     _conn.contacts.insert(fullContact, function(err, res) {
       request(app)
         .get('/contacts?name=TesterCarioca')
         .expect(200, done)
         .expect(function(res) {
-          assert.equal('TesterCarioca', res.body[0].name, 'Retorno do name diferente do esperado');
-          assert.equal('0552188889999', res.body[0].mobilephone, 'Retorno do mobilephone diferente do esperado');
-          assert.equal('0552133332222', res.body[0].homephone, 'Retorno do homephone diferente do esperado');
+          assert.equal('TesterCarioca', res.body[0].name, 'Return different name than expected');
+          assert.equal('0552188889999', res.body[0].mobilephone, 'Return different mobilephone than expected');
+          assert.equal('0552133332222', res.body[0].homephone, 'Return different homephone than expected');
         });
     });
   });
@@ -44,6 +44,7 @@ describe('Tests API Phone Book - GET ', function() {
       .get('/contacts/?name=TestadorMineiro')
       .end(function(err, res) {
         assert.equal(res.status, 404);
+        assert.equal(res.text, 'Not Found');
         done();
       });
   });
