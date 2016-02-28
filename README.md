@@ -8,14 +8,14 @@ A simple API REST for experiencing testing frameworks
 * Node / Npm
 
 #### Setup
-* git clone https://github.com/fredmoreira/PhoneBook.git
+* git clone https://github.com/fredmoreira/phone-book
 * npm install
 
 #### Run server
 
 * npm start
 
-#### HEADER
+#### Header
 
 You must use **Content-Type: application/json**
 
