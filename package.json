@@ -4,6 +4,7 @@
   "description": "Simple API REST using Nodejs, Express and MongoDB for presentations about integration tests",
   "main": "./lib/index.js",
   "scripts": {
+    "prestart" : "mongorestore --collection contacts --db phone-book --drop ./load/contacts.bson",
     "start": "node lib/index.js",
     "test": "mocha -R spec --recursive"
   },
