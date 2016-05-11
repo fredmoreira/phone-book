@@ -50,6 +50,7 @@ it('PUT - Should return 404', function(done) {
 request(app)
   .delete('/contacts/11d3008555d5d3700167fb11')
   .end(function(err, res) {
+    assert.isNull(err);
     assert.equal(res.status, 404);
     assert.equal(res.text, 'Not Found');
     done();
