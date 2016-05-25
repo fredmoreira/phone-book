@@ -1,4 +1,4 @@
-#PhoneBook [![Circle CI](https://circleci.com/gh/fredmoreira/phone-book.svg?style=shield)](https://circleci.com/gh/fredmoreira/phone-book) <a href="https://codeclimate.com/github/fredmoreira/phone-book"><img src="https://codeclimate.com/github/fredmoreira/phone-book/badges/gpa.svg" /></a>
+#PhoneBook [![Circle CI](https://circleci.com/gh/fredmoreira/phone-book.svg?style=shield)](https://circleci.com/gh/fredmoreira/phone-book) [![Code Climate](https://codeclimate.com/github/fredmoreira/phone-book/badges/gpa.svg)](https://codeclimate.com/github/fredmoreira/phone-book)
 
 A simple API REST for experiencing testing frameworks
 
