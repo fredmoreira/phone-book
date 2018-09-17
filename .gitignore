@@ -6,3 +6,4 @@ node_modules
 
 #ignore the tmp files
 tmp
+*.tmp

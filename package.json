@@ -4,7 +4,7 @@
   "description": "Simple API REST using Nodejs, Express and MongoDB for presentations about integration tests",
   "main": "./lib/index.js",
   "scripts": {
-    "prestart" : "mongorestore --collection contacts --db phone-book --drop ./load/contacts.bson",
+    "prestart": "mongorestore --collection contacts --db phone-book --drop ./load/contacts.bson",
     "start": "node lib/index.js",
     "test": "mocha -R spec --recursive"
   },
@@ -26,18 +26,18 @@
   },
   "homepage": "https://github.com/fredmoreira/PhoneBook",
   "dependencies": {
+    "bluebird": "^3.0.5",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
-    "bluebird": "^3.0.5",
     "mongojs": "2.4.0",
+    "morgan": "^1.9.1",
     "tv4": "^1.2.7",
-    "winston": "~1.0.x",
-    "morgan": "~1.6.x"
+    "winston": "~1.0.x"
   },
   "devDependencies": {
-    "mocha": "2.X.0",
+    "chai": "*",
+    "mocha": "^5.2.0",
     "nodemon": "^1.8.1",
-    "supertest": "1.1.X",
-    "chai": "*"
+    "supertest": "^3.3.0"
   }
 }
