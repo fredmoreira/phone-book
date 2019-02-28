@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/phone-book
+    working_directory: .
     docker:
       - image: circleci/node:10.15.1
       - image: mongo:4.0.3
