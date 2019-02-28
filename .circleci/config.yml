@@ -1,6 +1,10 @@
 version: 2
 jobs:
   build:
+    docker:
+      - image: circleci/node:10.15.1
+      - image: mongo:4.0.3
+    working_directory: ~/phone-book
     steps:
       - run:
           name: install-npm
