@@ -7,9 +7,6 @@ jobs:
       - image: mongo:4.0.3
     steps:
       - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@5'
-      - run:
           name: install-npm
           command: npm install
       - run:
