@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/phone-book
+    docker:
+      - image: circleci/node:10.15.1
+      - image: mongo:4.0.3
+    steps:
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@5'
+      - run:
+          name: install-npm
+          command: npm install
+      - run:
+          name: test
+          command: npm test
+      - run:
+          name: code-coverage
+          command: './node_modules/.bin/nyc report --reporter=text-lcov'
+      - store_artifacts:
+          path: test-results.xml
+          prefix: tests
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
+      - store_test_results:
+          path: test-results.xml
