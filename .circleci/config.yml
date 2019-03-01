@@ -4,8 +4,14 @@ jobs:
     docker:
       - image: circleci/node:10.15.1
       - image: mongo:4.0.3
+
     working_directory: ~/phone-book
     steps:
+      - attach_workspace:
+          at: ~/phone-book
+    steps:
+      - checkout
+
       - run:
           name: install-npm
           command: npm install
