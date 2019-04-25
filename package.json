@@ -30,14 +30,11 @@
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "mongojs": "2.4.0",
-    "morgan": "^1.9.1",
-    "tv4": "^1.2.7",
-    "winston": "~1.0.x"
+    "tv4": "^1.2.7"
   },
   "devDependencies": {
     "chai": "*",
-    "mocha": "^6.0.2",
-    "nodemon": "^1.8.1",
+    "mocha": "^6.1.4",
     "supertest": "^3.3.0"
   }
 }
