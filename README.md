@@ -6,7 +6,7 @@ A simple API REST for experiencing testing frameworks
 #### Depedencies
 
 * MongoDB
-* Node / Npm
+* Node & Npm
 
 #### Setup
 * git clone https://github.com/fredmoreira/phone-book
