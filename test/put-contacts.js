@@ -52,7 +52,6 @@ request(app)
   .end(function(err, res) {
     assert.isNull(err);
     assert.equal(res.status, 404);
-    assert.equal(res.text, 'Not Found');
     done();
   });
 });

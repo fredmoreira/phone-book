@@ -37,14 +37,14 @@ describe('Tests API Phone Book - DELETE ', function() {
       done();
     });
   });
+
+  it('DELETE - Should return 404', function(done) {
+    request(app)
+      .delete('/contacts/56d3008555d5d3700167fb77')
+      .end(function(err, res) {
+        assert.equal(res.status, 404);
+        done();
+      });
+    });    
 });
 
-it('DELETE - Should return 404', function(done) {
-request(app)
-  .delete('/contacts/56d3008555d5d3700167fb77')
-  .end(function(err, res) {
-    assert.equal(res.status, 404);
-    assert.equal(res.text, 'Not Found');
-    done();
-  });
-});
