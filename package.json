@@ -27,8 +27,8 @@
   "homepage": "https://github.com/fredmoreira/PhoneBook",
   "dependencies": {
     "bluebird": "^3.0.5",
-    "body-parser": "^1.14.1",
-    "express": "^4.13.3",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "mongojs": "^3.1.0",
     "tv4": "^1.2.7"
   },
