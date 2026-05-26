@@ -10,8 +10,8 @@ jobs:
           at: ~/phone-book
       - checkout
       - run:
-          name: install-npm
-          command: npm install
+          name: install-yarn
+          command: yarn install
       - run:
           name: test
-          command: npm test
+          command: yarn test

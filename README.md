@@ -6,15 +6,15 @@ A simple API REST for experiencing testing frameworks
 #### Depedencies
 
 * MongoDB
-* Node & Npm
+* Node & Yarn
 
 #### Setup
 * git clone https://github.com/fredmoreira/phone-book
-* npm install
+* yarn install
 
 #### Run server
 
-* npm start
+* yarn start
 
 #### Header
 
