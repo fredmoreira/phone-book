@@ -1,12 +1,15 @@
 {
   "name": "phone-book",
   "version": "1.0.0",
-  "description": "Simple API REST using Nodejs, Express and MongoDB for presentations about integration tests",
+  "description": "Simple API REST using Nodejs, Express and JSON file storage for presentations about integration tests",
   "main": "./lib/index.js",
   "scripts": {
-    "prestart": "mongorestore --collection contacts --db phone-book --drop ./load/contacts.bson",
+    "prestart": "node load-initial-data.js",
     "start": "node lib/index.js",
-    "test": "mocha -R spec --exit"
+    "lint": "eslint lib/ test/",
+    "test": "mocha -R spec --exit",
+    "coverage": "nyc mocha -R spec --exit",
+    "test:coverage": "npm run coverage"
   },
   "repository": {
     "type": "git",
@@ -29,12 +32,14 @@
     "bluebird": "^3.0.5",
     "body-parser": "^1.20.1",
     "express": "^4.17.3",
-    "mongojs": "^3.1.0",
+    "uuid": "^9.0.0",
     "tv4": "^1.2.7"
   },
   "devDependencies": {
     "chai": "*",
+    "eslint": "^8.43.0",
     "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
     "supertest": "^3.3.0"
   }
 }

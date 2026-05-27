@@ -1,17 +1,116 @@
-version: 2
+version: 2.1
 jobs:
   build:
     working_directory: ~/phone-book
     docker:
-      - image: circleci/node:10.15.1
-      - image: mongo:4.0.3
+      - image: cimg/node:20.19.0
     steps:
-      - attach_workspace:
-          at: ~/phone-book
-      - checkout
       - run:
-          name: install-yarn
-          command: yarn install
+          name: Checkout code
+          no_output_timeout: 10m
+          command: |
+            git clone https://github.com/fredmoreira/phone-book.git .
+            git checkout $CIRCLE_SHA1
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+            - yarn-cache-
       - run:
-          name: test
+          name: Install dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          paths:
+            - ~/.cache/yarn
+            - node_modules
+          key: yarn-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Initialize data
+          command: node load-initial-data.js
+
+  lint:
+    working_directory: ~/phone-book
+    docker:
+      - image: cimg/node:20.19.0
+    steps:
+      - run:
+          name: Checkout code
+          no_output_timeout: 10m
+          command: |
+            git clone https://github.com/fredmoreira/phone-book.git .
+            git checkout $CIRCLE_SHA1
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+            - yarn-cache-
+      - run:
+          name: Install dependencies
+          command: yarn install --frozen-lockfile
+      - run:
+          name: Run linter
+          command: yarn lint
+
+  test:
+    working_directory: ~/phone-book
+    docker:
+      - image: cimg/node:20.19.0
+    steps:
+      - run:
+          name: Checkout code
+          no_output_timeout: 10m
+          command: |
+            git clone https://github.com/fredmoreira/phone-book.git .
+            git checkout $CIRCLE_SHA1
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+            - yarn-cache-
+      - run:
+          name: Install dependencies
+          command: yarn install --frozen-lockfile
+      - run:
+          name: Initialize data
+          command: node load-initial-data.js
+      - run:
+          name: Run tests
           command: yarn test
+
+  coverage:
+    working_directory: ~/phone-book
+    docker:
+      - image: cimg/node:20.19.0
+    steps:
+      - run:
+          name: Checkout code
+          no_output_timeout: 10m
+          command: |
+            git clone https://github.com/fredmoreira/phone-book.git .
+            git checkout $CIRCLE_SHA1
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+            - yarn-cache-
+      - run:
+          name: Install dependencies
+          command: yarn install --frozen-lockfile
+      - run:
+          name: Initialize data
+          command: node load-initial-data.js
+      - run:
+          name: Generate coverage report
+          command: yarn coverage
+      - store_artifacts:
+          path: coverage
+          destination: coverage-report
+
+workflows:
+  version: 2
+  build_test_coverage:
+    jobs:
+      - build
+      - lint
+      - test:
+          requires:
+            - build
+      - coverage:
+          requires:
+            - build

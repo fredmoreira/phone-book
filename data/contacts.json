@@ -1,0 +1,34 @@
+[
+  {
+    "_id": {
+      "id": "4f7beaf4-5983-40cb-9dc0-a0540e13b7de"
+    },
+    "name": "Tester",
+    "mobilephone": "0552188889999",
+    "homephone": "0552133332222"
+  },
+  {
+    "_id": {
+      "id": "f785b117-34a7-46bb-ab5c-c57a1ae919a3"
+    },
+    "name": "TesterCarioca",
+    "mobilephone": "0552188889999",
+    "homephone": "0552133332222"
+  },
+  {
+    "_id": {
+      "id": "b7db75d8-8010-476d-8f80-8916264b5d99"
+    },
+    "name": "Tester Mineiro",
+    "mobilephone": "0553188889999",
+    "homephone": "0553133332222"
+  },
+  {
+    "_id": {
+      "id": "1b723396-ceb2-43ed-9ca8-f026150a07d8"
+    },
+    "name": "TesterUPDATED",
+    "mobilephone": "05531999998888",
+    "homephone": "0553134345656"
+  }
+]
