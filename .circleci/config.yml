@@ -5,16 +5,11 @@ jobs:
     docker:
       - image: cimg/node:20.19.0
     steps:
-      - run:
-          name: Checkout code
-          no_output_timeout: 10m
-          command: |
-            git clone https://github.com/fredmoreira/phone-book.git .
-            git checkout $CIRCLE_SHA1
+      - checkout
       - restore_cache:
           keys:
-            - yarn-cache-{{ checksum "yarn.lock" }}
-            - yarn-cache-
+            - v2-yarn-cache-node20-{{ checksum "yarn.lock" }}
+            - v2-yarn-cache-node20-
       - run:
           name: Install dependencies
           command: yarn install --frozen-lockfile
@@ -22,7 +17,7 @@ jobs:
           paths:
             - ~/.cache/yarn
             - node_modules
-          key: yarn-cache-{{ checksum "yarn.lock" }}
+          key: v2-yarn-cache-node20-{{ checksum "yarn.lock" }}
       - run:
           name: Initialize data
           command: node load-initial-data.js
@@ -32,16 +27,11 @@ jobs:
     docker:
       - image: cimg/node:20.19.0
     steps:
-      - run:
-          name: Checkout code
-          no_output_timeout: 10m
-          command: |
-            git clone https://github.com/fredmoreira/phone-book.git .
-            git checkout $CIRCLE_SHA1
+      - checkout
       - restore_cache:
           keys:
-            - yarn-cache-{{ checksum "yarn.lock" }}
-            - yarn-cache-
+            - v2-yarn-cache-node20-{{ checksum "yarn.lock" }}
+            - v2-yarn-cache-node20-
       - run:
           name: Install dependencies
           command: yarn install --frozen-lockfile
@@ -54,16 +44,11 @@ jobs:
     docker:
       - image: cimg/node:20.19.0
     steps:
-      - run:
-          name: Checkout code
-          no_output_timeout: 10m
-          command: |
-            git clone https://github.com/fredmoreira/phone-book.git .
-            git checkout $CIRCLE_SHA1
+      - checkout
       - restore_cache:
           keys:
-            - yarn-cache-{{ checksum "yarn.lock" }}
-            - yarn-cache-
+            - v2-yarn-cache-node20-{{ checksum "yarn.lock" }}
+            - v2-yarn-cache-node20-
       - run:
           name: Install dependencies
           command: yarn install --frozen-lockfile
@@ -79,16 +64,11 @@ jobs:
     docker:
       - image: cimg/node:20.19.0
     steps:
-      - run:
-          name: Checkout code
-          no_output_timeout: 10m
-          command: |
-            git clone https://github.com/fredmoreira/phone-book.git .
-            git checkout $CIRCLE_SHA1
+      - checkout
       - restore_cache:
           keys:
-            - yarn-cache-{{ checksum "yarn.lock" }}
-            - yarn-cache-
+            - v2-yarn-cache-node20-{{ checksum "yarn.lock" }}
+            - v2-yarn-cache-node20-
       - run:
           name: Install dependencies
           command: yarn install --frozen-lockfile
