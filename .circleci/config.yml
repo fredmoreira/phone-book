@@ -25,7 +25,7 @@ jobs:
   lint:
     working_directory: ~/phone-book
     docker:
-      - image: cimg/node:16.20.0
+      - image: cimg/node:20.19.0
     steps:
       - checkout
       - restore_cache:
