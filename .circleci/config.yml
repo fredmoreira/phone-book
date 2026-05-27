@@ -5,7 +5,12 @@ jobs:
     docker:
       - image: cimg/node:16.20.0
     steps:
-      - checkout
+      - run:
+          name: Checkout code
+          no_output_timeout: 10m
+          command: |
+            git clone https://github.com/fredmoreira/phone-book.git .
+            git checkout $CIRCLE_SHA1
       - restore_cache:
           keys:
             - yarn-cache-{{ checksum "yarn.lock" }}
@@ -27,7 +32,12 @@ jobs:
     docker:
       - image: cimg/node:16.20.0
     steps:
-      - checkout
+      - run:
+          name: Checkout code
+          no_output_timeout: 10m
+          command: |
+            git clone https://github.com/fredmoreira/phone-book.git .
+            git checkout $CIRCLE_SHA1
       - restore_cache:
           keys:
             - yarn-cache-{{ checksum "yarn.lock" }}
@@ -44,7 +54,12 @@ jobs:
     docker:
       - image: cimg/node:16.20.0
     steps:
-      - checkout
+      - run:
+          name: Checkout code
+          no_output_timeout: 10m
+          command: |
+            git clone https://github.com/fredmoreira/phone-book.git .
+            git checkout $CIRCLE_SHA1
       - restore_cache:
           keys:
             - yarn-cache-{{ checksum "yarn.lock" }}
@@ -64,7 +79,12 @@ jobs:
     docker:
       - image: cimg/node:16.20.0
     steps:
-      - checkout
+      - run:
+          name: Checkout code
+          no_output_timeout: 10m
+          command: |
+            git clone https://github.com/fredmoreira/phone-book.git .
+            git checkout $CIRCLE_SHA1
       - restore_cache:
           keys:
             - yarn-cache-{{ checksum "yarn.lock" }}
