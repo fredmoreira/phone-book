@@ -1,11 +1,10 @@
 # PhoneBook [![Circle CI](https://circleci.com/gh/fredmoreira/phone-book.svg?style=svg)](https://circleci.com/gh/fredmoreira/phone-book)
 
 
-A simple API REST for experiencing testing frameworks
+A simple API REST with JSON file-based storage for experiencing testing frameworks
 
 #### Depedencies
 
-* MongoDB
 * Node & Yarn
 
 #### Setup

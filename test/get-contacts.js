@@ -21,18 +21,18 @@ describe('Tests API Phone Book - GET ', function() {
   });
 
   after(function(done) {
-    _conn.contacts.remove({}, function(err, res) {
+    _conn.contacts.remove({}, function(_err, _res) {
       done();
     });
   });
 
   it('GET - Should return a full contact.', function(done) {
-    _conn.contacts.insert(fullContact, function(err, res) {
+    _conn.contacts.insert(fullContact, function(_err, _res) {
       request(app)
         .get('/contacts?name=TesterCarioca')
         .expect(200)
-        .end(function(err, res) {
-          assert.isNull(err);
+        .end(function(_err, res) {
+          assert.isNull(_err);
           assert.equal('TesterCarioca', res.body[0].name, 'Return different name than expected');
           assert.equal('0552188889999', res.body[0].mobilephone, 'Return different mobilephone than expected');
           assert.equal('0552133332222', res.body[0].homephone, 'Return different homephone than expected');
@@ -44,7 +44,7 @@ describe('Tests API Phone Book - GET ', function() {
   it('GET - Contact there is no.', function(done) {
     request(app)
       .get('/contacts/?name=TestadorMineiro')
-      .end(function(err, res) {
+      .end(function(_err, res) {
         assert.equal(res.status, 404);
         assert.equal(res.text, 'Not Found');
         done();

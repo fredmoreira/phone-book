@@ -2,7 +2,6 @@
 
 var assert = require('chai').assert;
 var request = require('supertest');
-var expect = require('chai').expect;
 var db = require('../lib/db');
 var app = require('../lib/index');
 var _conn;
@@ -32,7 +31,7 @@ describe('Tests API Phone Book - POST', function() {
   });
 
   after(function(done) {
-    _conn.contacts.remove({}, function(err, res) {
+    _conn.contacts.remove({}, function(_err, _res) {
       done();
     });
   });
@@ -42,7 +41,7 @@ describe('Tests API Phone Book - POST', function() {
       .post('/contacts/')
       .set('Content-type', 'application/json')
       .send(fullContact)
-      .end(function(err, res) {
+      .end(function(_err, res) {
         assert.equal(res.status, 201);
         assert.equal(res.body.name, 'Tester Mineiro', 'Check o name!');
         assert.equal(res.body.mobilephone, '0553188889999', 'Check mobilephone!');
@@ -56,7 +55,7 @@ describe('Tests API Phone Book - POST', function() {
       .post('/contacts/')
       .set('Content-type', 'application/json')
       .send(unnamedContact)
-      .end(function(err, res) {
+      .end(function(_err, res) {
         assert.equal(res.status, 400);
         assert.equal(res.text, 'Missing required property: name', 'Validating required name message!');
         done();
