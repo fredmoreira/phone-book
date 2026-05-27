@@ -7,3 +7,7 @@ node_modules
 #ignore the tmp files
 tmp
 *.tmp
+
+# Coverage and NYC output
+coverage/
+.nyc_output/
