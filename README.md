@@ -1,19 +1,27 @@
 # PhoneBook [![Circle CI](https://circleci.com/gh/fredmoreira/phone-book.svg?style=svg)](https://circleci.com/gh/fredmoreira/phone-book)
 
 
-A simple API REST with JSON file-based storage for experiencing testing frameworks
+A simple REST API with JSON file-based storage for experimenting with testing frameworks.
 
-#### Depedencies
+#### Dependencies
 
 * Node & Yarn
 
 #### Setup
+
 * git clone https://github.com/fredmoreira/phone-book
 * yarn install
 
 #### Run server
 
 * yarn start
+
+#### Tests
+
+* yarn test
+* yarn test:unit
+* yarn test:coverage
+* yarn lint
 
 #### Header
 
@@ -24,12 +32,13 @@ You must use **Content-Type: application/json**
 * GET	  /contacts?parameter=    You can use *name* or *mobilephone* and *homephone*
 * POST 	  /contacts 		 
 * DELETE  /contacts/:id
-* PUT 	  /contacts/_id
+* PUT 	  /contacts/:id
 
 ##### Comments
+
 * Parameters "name" and "mobilephone" are required in *POST* method.
 
-#### Use manually test
+#### Manual testing
 
 * Postman - Chrome (https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm)
 

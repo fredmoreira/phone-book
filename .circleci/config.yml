@@ -49,6 +49,28 @@ jobs:
           name: Run linter
           command: yarn lint
 
+  unit-test:
+    working_directory: ~/phone-book
+    docker:
+      - image: cimg/node:20.19.0
+    steps:
+      - run:
+          name: Checkout code
+          no_output_timeout: 10m
+          command: |
+            git clone https://github.com/fredmoreira/phone-book.git .
+            git checkout $CIRCLE_SHA1
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+            - yarn-cache-
+      - run:
+          name: Install dependencies
+          command: yarn install --frozen-lockfile
+      - run:
+          name: Run unit tests
+          command: yarn test:unit
+
   test:
     working_directory: ~/phone-book
     docker:
@@ -108,9 +130,13 @@ workflows:
     jobs:
       - build
       - lint
+      - unit-test:
+          requires:
+            - build
       - test:
           requires:
             - build
+            - unit-test
       - coverage:
           requires:
             - build
