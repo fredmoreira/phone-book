@@ -139,4 +139,4 @@ workflows:
             - unit-test
       - coverage:
           requires:
-            - build
+            - test
