@@ -7,8 +7,9 @@
     "prestart": "node load-initial-data.js",
     "start": "node lib/index.js",
     "lint": "eslint lib/ test/",
-    "test": "mocha -R spec --exit",
-    "coverage": "nyc mocha -R spec --exit",
+    "test": "mocha -R spec --exit \"test/**/*.js\"",
+    "test:unit": "mocha -R spec --exit \"test/unit/**/*.js\"",
+    "coverage": "nyc mocha -R spec --exit \"test/**/*.js\"",
     "test:coverage": "npm run coverage"
   },
   "repository": {
@@ -29,17 +30,17 @@
   },
   "homepage": "https://github.com/fredmoreira/PhoneBook",
   "dependencies": {
-    "bluebird": "^3.0.5",
-    "body-parser": "^1.20.1",
-    "express": "^4.17.3",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
     "uuid": "^9.0.0",
-    "tv4": "^1.2.7"
+    "tv4": "^1.3.0"
   },
   "devDependencies": {
-    "chai": "*",
+    "chai": "^4.3.7",
     "eslint": "^8.43.0",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
-    "supertest": "^3.3.0"
+    "supertest": "^7.2.2"
   }
 }
